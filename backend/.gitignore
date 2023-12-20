@@ -1,0 +1,49 @@
+# Node.js
+node_modules/
+
+# Dependency directories
+jspm_packages/
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Rest http files
+*.http
+
+# Optional npm package files
+*.d.ts
+
+# Nest
+dist/
+.cache/
+output/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production
+build/
+
+# Rest of your gitignore...
