@@ -68,9 +68,35 @@ const getProductByCategory = async (req, res) => {
   }
 };
 
+const addProduct = async (req, res) => {
+  try {
+    const { name, description, price, category, image, stock, rating } = req.body;
+    const product = await Product({
+      name,
+      description,
+      image,
+      category,
+      price,
+      stock,
+      rating,
+    });
+    
+    if (product) {
+      product.save();
+      res.status(200).json(product);
+    } else {
+      res.status(500).json({err: "Failed to create, Internal server error"});
+    }
+  } catch (error) {
+    console.log('Product creation error:', error.message);
+    res.status(500).json({err: "Internal Server Error"});
+  }
+}
+
 module.exports = {
   getProducts,
   getProductById,
   getUniqueProducts,
   getProductByCategory,
+  addProduct,
 };
