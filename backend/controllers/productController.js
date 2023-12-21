@@ -32,16 +32,12 @@ const getProductById = async (req, res) => {
 // @GET -> get unique products acc to limit 
 const getUniqueProducts = async (req, res) => {
   try {
-    let { limit } = parseInt(req.params);
-    if (isNaN(limit) || limit <= 0) {
-      return res.status(400).json({ error: 'Invalid limit parameter' });
-    }
-    const uniqueCategories = await Product.distinct('category').exec();
-    const uniqueProducts = await Promise.all(
-      uniqueCategories.slice(0, limit).map(async (category) => {
-        return await Product.findOne({ category }).exec();
-      })
-    );
+    const limit = parseInt(req.params.limit);
+    const uniqueProducts = await Product.aggregate([
+      { $sample: { size: limit } },
+      { $group: { _id: '$_id', data: { $first: '$$ROOT' } } },
+      { $replaceRoot: { newRoot: '$data' } },
+    ]);
     res.json(uniqueProducts);
   } catch (error) {
     console.error('Error fetching unique products:', error.message);
