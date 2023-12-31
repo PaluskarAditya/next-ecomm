@@ -20,7 +20,7 @@ export default function Page() {
       <div className='w-[75%] flex gap-5'>
         <div className='max-h-[470px] h-[470px] flex p-5 w-[60%] flex-col overflow-scroll gap-3 justify-start items-center'>
           {
-            cart.length !== 0 ? cart?.map(el => <div className='flex w-full h-[160px] justify-between bg-gray-100/50 items-center'>
+            cart.length !== 0 ? cart?.map(el => <div key={el._id} className='flex w-full h-[160px] justify-between bg-gray-100/50 items-center'>
               <div className='flex justify-center h-full gap-4 items-center'>
                 <img src={el.image} className='w-40 min-w-40 h-40 object-cover object-center' />
                 <div className='h-full flex-col flex justify-between items-start p-4 px-0'>
