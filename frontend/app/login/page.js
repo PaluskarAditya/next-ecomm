@@ -7,7 +7,7 @@ import { login } from '../features/userSlice';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 
-export default function page() {
+export default function Page() {
   const [cred, setCred] = useState({ uname: "", pass: "" });
   const { isLogin, error } = useSelector(state => state.user);
   const router = useRouter();

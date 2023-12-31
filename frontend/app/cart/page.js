@@ -3,12 +3,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { add_qty, remove, sub_qty } from '../features/cartSlice';
-import { useRouter } from 'next/navigation';
 
-export default function page() {
+export default function Page() {
   const { cart, total } = useSelector(state => state.cart);
-  const router = useRouter();
-  const { isLogin } = useSelector(state => state.user);
   const disp = useDispatch();
   const handleRemove = (el) => {
     disp(remove(el))

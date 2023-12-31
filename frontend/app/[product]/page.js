@@ -9,7 +9,7 @@ import { add } from '../features/cartSlice';
 import SizeDropdown from '../components/Sizes';
 import { toast } from 'sonner';
 
-export default function page() {
+export default function Page() {
   const params = useParams();
   const disp = useDispatch();
   const { product, loading } = useSelector(state => state.products);
