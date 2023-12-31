@@ -16,7 +16,7 @@ export default function Page() {
   }
 
   return (
-    <div className='min-[391px]:h-screen pt-[80px] flex gap-5 justify-center items-start p-10'>
+    <div className='min-[431px]:h-screen pt-[80px] flex gap-5 justify-center items-start p-10'>
       <div className='w-[75%] flex gap-5 max-[430px]:justify-center items-center max-[430px]:flex-col'>
         <div className='max-h-[470px] flex p-5 w-[60%] max-[430px]:w-full flex-col overflow-scroll gap-3 justify-start items-center'>
           {

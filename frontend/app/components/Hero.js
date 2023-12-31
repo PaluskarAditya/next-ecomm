@@ -14,7 +14,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <div className='min-[391px]:h-screen max-[430px]:flex-col flex gap-10 justify-center items-center p-5 max-[430px]:pt-[130px]'>
+    <div className='min-[431px]:h-screen max-[430px]:flex-col flex gap-10 justify-center items-center p-5 max-[430px]:pt-[130px]'>
       <div className='flex-1 flex flex-col justify-center items-end'>
         <h1 className='text-6xl mb-2 font-black tracking-tighter text-right'>Experience Elegance, Embrace Luxury</h1>
         <p className='text-sm tracking-tighter font-light'>Where Every Purchase is a Statement of Style</p>

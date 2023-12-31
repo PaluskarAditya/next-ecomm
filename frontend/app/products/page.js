@@ -7,7 +7,7 @@ import "react-tabs/style/react-tabs.css"
 
 export default function Page() {
   return (
-    <div className='pt-[80px] h-full min-[391px]:min-h-screen'>
+    <div className='pt-[80px] h-full min-[431px]:min-h-screen'>
       <Tabs className={'z-20 border-0 w-full flex justify-center items-center flex-col bg-white h-full'}>
         <TabList className={'border-0 flex'}>
           {

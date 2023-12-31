@@ -17,7 +17,7 @@ export default function Featured() {
   return (
     <div className='h-[450px] flex justify-center items-center flex-col gap-5 p-5 py-10 pb-10'>
       <h1 className='tracking-tighter font-normal text-xl'>Featured products</h1>
-      <div className='grid min-[391px]:grid-cols-4 grid-cols-2 gap-3 h-full w-[75%]'>
+      <div className='grid min-[431px]:grid-cols-4 grid-cols-2 gap-3 h-full w-[75%]'>
         {
           loading ? <ProductSkeletion /> : featured?.map(el => <Product id={el._id} key={el._id} name={el.name} price={el.price} img={el.image} />)
         }

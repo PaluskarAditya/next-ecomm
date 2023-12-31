@@ -39,7 +39,7 @@ export default function Page() {
   }
   
   return (
-    <div className='min-[391px]:h-screen flex'>
+    <div className='min-[431px]:h-screen flex'>
       {loading ? <ProductPageSkeletion /> : <div className='h-full w-full flex flex-col'>
       <div className='h-screen pt-[78px] p-10 flex-1'>
         <img alt='product' src={product.image} className='h-full w-full object-cover object-center' />
