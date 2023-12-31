@@ -1,6 +1,6 @@
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
-const baseUrl = 'https://ecommerce-backend-0zbt.onrender.com'
+const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : "https://ecommerce-backend-0zbt.onrender.com"
 
 const initialState = {
   top3: [],
@@ -27,7 +27,7 @@ export const getTop3 = createAsyncThunk('product/top3', async () => {
 
 export const getFeatured = createAsyncThunk('product/featured', async () => {
   try {
-    const res = await fetch(`${baseUrl}/api/products/4`, { cache: "no-store" });
+    const res = await fetch(`${baseUrl}/api/products/limit/4`, { cache: "no-store" });
     const data = await res.json();
     if (data.error) {
       throw new Error(data.error);
@@ -67,6 +67,16 @@ export const getSingleProduct = createAsyncThunk('product/getsingle', async (id)
   }
 })
 
+export const getProductByCategory = createAsyncThunk('product/bycategory', async (cat) => {
+  try {
+    const res = await fetch(`${baseUrl}/api/products/category/${cat}`);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error.message);
+  }
+})
+
 const productSlice = createSlice({
   name: "products",
   initialState,
@@ -84,7 +94,7 @@ const productSlice = createSlice({
     
     builder.addCase(getFeatured.fulfilled, (state, action) => {
       state.loading = false;
-      return { ...state, featured: action.payload };
+      state.featured = action.payload;
     })
     
     builder.addCase(getAll.fulfilled, (state, action) => {
@@ -93,8 +103,14 @@ const productSlice = createSlice({
     })
     
     builder.addCase(getSingleProduct.fulfilled, (state, action) => {
+      state.product = "";
       state.loading = false;
-      return { ...state, product: action.payload };
+      state.product = action.payload;
+    })
+    
+    builder.addCase(getProductByCategory.fulfilled, (state, action) => {
+      state.loading = false;
+      state.all = action.payload;
     })
     
     //Pending Actions
@@ -111,6 +127,10 @@ const productSlice = createSlice({
     })
     
     builder.addCase(getSingleProduct.pending, (state) => {
+      state.loading = true;
+    })
+    
+    builder.addCase(getProductByCategory.pending, (state) => {
       state.loading = true;
     })
     
@@ -131,6 +151,11 @@ const productSlice = createSlice({
     })
     
     builder.addCase(getSingleProduct.rejected, (state, action) => {
+      state.loading = false;
+      return { ...state, error: action.payload.error };
+    })
+    
+    builder.addCase(getProductByCategory.rejected, (state, action) => {
       state.loading = false;
       return { ...state, error: action.payload.error };
     })
