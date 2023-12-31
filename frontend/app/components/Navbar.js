@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav className='fixed z-40 top-0 left-0 right-0 p-5 flex justify-between items-center bg-white/90 backdrop-blur-sm'>
       <ul>
         <li className='flex justify-center items-center gap-2'>
-          <img src='../favicon.ico' className='h-[40px] w-[40px]' />
+          <img alt='product' src='../favicon.ico' className='h-[40px] w-[40px]' />
           <Link href={'/'} className='tracking-tighter text-xl font-thin'>LuxeCart</Link>
         </li>
       </ul>

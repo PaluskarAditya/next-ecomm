@@ -17,7 +17,7 @@ export default function Page() {
       <div className='flex flex-col justify-center items-center'>
         <h1 className='font-semibold tracking-tighter text-2xl'>Register</h1>
         <div>
-          <img src='/signup.jpg' className='h-64 w-64 object-contain' />
+          <img alt='product' src='/signup.jpg' className='h-64 w-64 object-contain' />
         </div>
         <div className='flex flex-col w-full gap-2 justify-center items-center'>
           <div className='w-3/4 flex'>

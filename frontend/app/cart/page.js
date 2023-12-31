@@ -22,7 +22,7 @@ export default function Page() {
           {
             cart.length !== 0 ? cart?.map(el => <div key={el._id} className='flex w-full h-[160px] justify-between bg-gray-100/50 items-center'>
               <div className='flex justify-center h-full gap-4 items-center'>
-                <img src={el.image} className='w-40 min-w-40 h-40 object-cover object-center' />
+                <img alt='product' src={el.image} className='w-40 min-w-40 h-40 object-cover object-center' />
                 <div className='h-full flex-col flex justify-between items-start p-4 px-0'>
                   <div>
                     <h1 className='tracking-tighter'>{el.name}</h1>
