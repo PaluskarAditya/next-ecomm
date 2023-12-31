@@ -44,7 +44,7 @@ export default function Page() {
       <div className='h-screen pt-[78px] p-10 flex-1'>
         <img alt='product' src={product.image} className='h-full w-full object-cover object-center' />
       </div>
-      <div className='flex flex-1 pt-[74px] flex-col gap-5 justify-start items-start pl-0 max-[390px]:p-10 p-10'>
+      <div className='flex flex-1 pt-[74px] flex-col gap-5 justify-start items-start pl-0 max-[430px]:p-10 p-10'>
         <div className='flex justify-start items-center'>
           <h1 className='text-left tracking-tighter font-semibold text-3xl'>{product.name}</h1>
         </div>
