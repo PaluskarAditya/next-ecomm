@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { register } from '../features/userSlice';
 
-export default function page() {
+export default function Page() {
   const [ cred, setCred ] = useState({ uname: "", pass: "", email: "" });
   const changeHandler = (e) => {
     setCred({...cred, [e.target.name]: e.target.value});
