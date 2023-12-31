@@ -4,17 +4,19 @@ const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : "https://ecommerce-backend-0zbt.onrender.com"
 
+const isBrowser = typeof window !== 'undefined';
+
 const initialState = {
-  user: typeof window !== undefined && JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : {
+  user: isBrowser && JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : {
     id: "",
     name: "",
     username: "",
     email: ""
   },
-  token: typeof window !== undefined && JSON.parse(localStorage.getItem('token')) ? JSON.parse(localStorage.getItem('token')) : "",
-  isLogin: typeof window !== undefined &&  JSON.parse(localStorage.getItem('token')) ? true : false,
+  token: isBrowser && JSON.parse(localStorage.getItem('token')) ? JSON.parse(localStorage.getItem('token')) : "",
+  isLogin: isBrowser && JSON.parse(localStorage.getItem('token')) ? true : false,
   error: null
-}
+};
 
 export const login = createAsyncThunk('user/login', async (cred) => {
   const res = await fetch(`${baseUrl}/api/user/login`, {
