@@ -39,12 +39,12 @@ export default function Page() {
   }
   
   return (
-    <div className='h-screen'>
-      {loading ? <ProductPageSkeletion /> : <div className='h-full w-full grid grid-cols-2'>
-      <div className='h-screen pt-[78px] p-10 absolute w-1/2 left-0 bottom-0'>
+    <div className='min-[391px]:h-screen flex'>
+      {loading ? <ProductPageSkeletion /> : <div className='h-full w-full flex flex-col'>
+      <div className='h-screen pt-[78px] p-10 flex-1'>
         <img alt='product' src={product.image} className='h-full w-full object-cover object-center' />
       </div>
-      <div className='flex absolute right-0 bottom-0 top-0 w-1/2 pt-[74px] flex-col gap-5 justify-start items-start pl-0 p-10'>
+      <div className='flex flex-1 pt-[74px] flex-col gap-5 justify-start items-start pl-0 max-[390px]:p-10 p-10'>
         <div className='flex justify-start items-center'>
           <h1 className='text-left tracking-tighter font-semibold text-3xl'>{product.name}</h1>
         </div>

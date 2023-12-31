@@ -7,8 +7,8 @@ import "react-tabs/style/react-tabs.css"
 
 export default function Page() {
   return (
-    <div className='pt-[80px] min-h-screen'>
-      <Tabs className={'z-20 border-0 w-full flex justify-center items-center flex-col bg-white max-h-[500px]'}>
+    <div className='pt-[80px] h-full min-[391px]:min-h-screen'>
+      <Tabs className={'z-20 border-0 w-full flex justify-center items-center flex-col bg-white h-full'}>
         <TabList className={'border-0 flex'}>
           {
             ["shoes", "t-shirts", "jeans", "hoodies"].map(el => <Tab className={'border-b-2 cursor-pointer text-sm font-light rounded-0 p-2 outline-none transition'} key={el}>{el}</Tab>)

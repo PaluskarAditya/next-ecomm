@@ -16,9 +16,9 @@ export default function Page() {
   }
 
   return (
-    <div className='h-screen pt-[80px] flex gap-5 justify-center items-start p-10'>
-      <div className='w-[75%] flex gap-5'>
-        <div className='max-h-[470px] h-[470px] flex p-5 w-[60%] flex-col overflow-scroll gap-3 justify-start items-center'>
+    <div className='min-[391px]:h-screen pt-[80px] flex gap-5 justify-center items-start p-10'>
+      <div className='w-[75%] flex gap-5 max-[390px]:justify-center items-center max-[390px]:flex-col'>
+        <div className='max-h-[470px] flex p-5 w-[60%] max-[390px]:w-full flex-col overflow-scroll gap-3 justify-start items-center'>
           {
             cart.length !== 0 ? cart?.map(el => <div key={el._id} className='flex w-full h-[160px] justify-between bg-gray-100/50 items-center'>
               <div className='flex justify-center h-full gap-4 items-center'>
@@ -50,8 +50,8 @@ export default function Page() {
             </div>) : <h1 className='text-xl font-light tracking-tighter'>No items in cart</h1>
           }
         </div>
-        <div className='w-[40%] h-full flex flex-col justify-start items-center p-5 pl-0'>
-          <div className='bg-black w-full p-5 flex flex-col justify-center items-start gap-4'>
+        <div className='w-[40%] max-[390px]:w-full  h-full flex flex-col justify-start items-center p-5 pl-0 max-[390px]:p-0'>
+          <div className='bg-black w-full p-5 flex flex-col justify-center items-start max-[390px]:items-center gap-4'>
             <h1 className='text-white tracking-tighter text-xl'>Summary</h1>
             <div className='flex flex-col gap-1 w-full'>
               {cart.length !== 0 ? <><div className='flex flex gap-2 justify-between items-center w-full'>
