@@ -28,7 +28,11 @@ const productSchema = new mongoose.Schema({
   stock: {
     type: Boolean,
     required: true
-  }
+  },
+  sizes: [{
+    type: String,
+    enum: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL', '6UK', '6.5UK', '7UK', '7.5UK', '8UK', '9UK'],
+  }],
 });
 
 const Product = mongoose.model('Product', productSchema);

@@ -66,7 +66,7 @@ const getProductByCategory = async (req, res) => {
 
 const addProduct = async (req, res) => {
   try {
-    const { name, description, price, category, image, stock, rating } = req.body;
+    const { name, description, price, sizes, category, image, stock, rating } = req.body;
     const product = await Product({
       name,
       description,
@@ -75,6 +75,7 @@ const addProduct = async (req, res) => {
       price,
       stock,
       rating,
+      sizes
     });
     
     if (product) {
