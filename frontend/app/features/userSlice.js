@@ -1,4 +1,6 @@
-const { createSlice, createAsyncThunk, isRejectedWithValue } = require("@reduxjs/toolkit");
+"use client"
+
+const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : "https://ecommerce-backend-0zbt.onrender.com"
 
